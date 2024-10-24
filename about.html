@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - Lifestyle Vibes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" />
+    <style>
+        /* Custom Font */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bs-light);
+            color: var(--bs-dark);
+        }
+
+        /* Navbar customization */
+        nav.navbar {
+            padding: 1rem;
+            background-color: var(--navbar-bg);
+            color: var(--navbar-color);
+        }
+
+        nav .navbar-brand {
+            transition: opacity 0.3s ease;
+        }
+
+        nav .navbar-brand:hover {
+            opacity: 0.7;
+        }
+
+        nav .nav-link {
+            margin-right: 1.5rem; /* Added space between links */
+            color: var(--navbar-color);
+        }
+
+        nav .dropdown-menu {
+            font-size: 0.9rem;
+            background-color: var(--navbar-dropdown-bg);
+            min-width: 100px; /* Set a minimum width for the dropdown */
+        }
+
+        nav .dropdown-item {
+            color: var(--navbar-dropdown-color);
+            padding: 0.2rem 1rem; /* Adjust padding */
+            margin: 0; /* Remove margin to tighten spacing */
+        }
+
+        /* Synchronizing colors for light and dark modes */
+        [data-bs-theme='light'] {
+            --bs-light: #ffffff;
+            --bs-dark: #212529;
+            --bs-primary: #0d6efd;
+            --navbar-bg: #f8f9fa; /* Light mode navbar background */
+            --navbar-color: #212529; /* Light mode navbar text color */
+            --navbar-dropdown-bg: #ffffff; /* Light mode dropdown background */
+            --navbar-dropdown-color: #212529; /* Light mode dropdown text color */
+        }
+
+        [data-bs-theme='dark'] {
+            --bs-light: #343a40;
+            --bs-dark: #ffffff;
+            --bs-primary: #1e7e34;
+            --navbar-bg: #212529; /* Dark mode navbar background */
+            --navbar-color: #ffffff; /* Dark mode navbar text color */
+            --navbar-dropdown-bg: #343a40; /* Dark mode dropdown background */
+            --navbar-dropdown-color: #ffffff; /* Dark mode dropdown text color */
+        }
+
+        /* Custom styles for sections */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#"><strong>Lifestyle Vibes</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary" href="#subscribe">Subscribe</a>
+                    </li>
+                    <!-- Dropdown for theme mode -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i id="themeIcon" class="bi bi-brightness-high"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="themeDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="setTheme('light')">
+                                    <i class="bi bi-brightness-high"></i> Light
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="setTheme('dark')">
+                                    <i class="bi bi-moon"></i> Dark
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="setTheme('auto')">
+                                    <i class="bi bi-circle-half"></i> Auto
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Home Section -->
+<section id="home">
+  <div class="container">
+      <h2>Welcome to Lifestyle Vibes</h2>
+      <p>Your journey to a healthier and happier life starts here.</p>
+
+      <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="/image1.jpg" class="d-block" alt="Image 1" />
+              </div>
+              <div class="carousel-item">
+                  <img src="/image2.jpg" class="d-block" alt="Image 2" />
+              </div>
+              <div class="carousel-item">
+                  <img src="/image3.jpg" class="d-block" alt="Image 3" />
+              </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+
+      <!-- Credit for the photos -->
+      <div class="text-center mt-2">
+          <small>Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a></small>
+      </div>
+
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Lifestyle Vibes</h2>
+            <h3>Our Story & Vision</h3>
+            <p>
+                Lifestyle Vibes was created with a simple goal: to help people live
+                better, healthier, and more fulfilling lives. We believe that true
+                happiness comes from balance, mindfulness, and a deep connection to
+                the world around us.
+            </p>
+            <h3>Our Mission</h3>
+            <p>
+                Our mission is to inspire and empower individuals to live
+                consciously. We cover various aspects of life including wellness,
+                fitness, fashion, and mindfulness to help our audience elevate their
+                everyday experiences.
+            </p>
+            <h3>Meet the Team</h3>
+            <p>
+                Our team consists of wellness enthusiasts, fitness experts, and
+                lifestyle gurus. We're dedicated to bringing you the latest insights
+                and trends to help you live your best life.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out!</p>
+            <form>
+                <div class="mb-3">
+                    <label for="contactName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="contactName" required />
+                </div>
+                <div class="mb-3">
+                    <label for="contactEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="contactEmail" required />
+                </div>
+                <div class="mb-3">
+                    <label for="contactMessage" class="form-label">Message</label>
+                    <textarea class="form-control" id="contactMessage" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Subscription Section -->
+    <section id="subscribe">
+        <div class="container">
+            <h2>Stay in the Loop</h2>
+            <h3>Subscribe to Our Newsletter</h3>
+            <form class="grid">
+                <input type="text" id="firstname" name="firstname" placeholder="First Name" aria-label="First Name" required />
+                <input type="email" id="email" name="email" placeholder="Email" aria-label="Email" required />
+                <button type="submit" onclick="event.preventDefault()">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container">
+        <small>
+            <a href="#">Privacy Policy</a> •
+            <a href="#">Terms & Conditions</a>
+        </small>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@1/js/pico.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
