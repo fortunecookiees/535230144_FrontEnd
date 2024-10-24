@@ -17,3 +17,8 @@ function setTheme(theme) {
 
 // Set initial theme based on system preference
 setTheme('auto');
+
+//js button meditation
+document.getElementById("meditationButton").addEventListener("click", function() {
+  window.location.href = "https://positivepsychology.com/meditation-techniques-beginners/";
+});

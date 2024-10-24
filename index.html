@@ -31,44 +31,42 @@
         }
 
         nav .nav-link {
-            margin-right: 1.5rem; /* Added space between links */
+            margin-right: 1.5rem;
             color: var(--navbar-color);
         }
 
         nav .dropdown-menu {
             font-size: 0.9rem;
             background-color: var(--navbar-dropdown-bg);
-            min-width: 100px; /* Set a minimum width for the dropdown */
+            min-width: 100px;
         }
 
         nav .dropdown-item {
             color: var(--navbar-dropdown-color);
-            padding: 0.2rem 1rem; /* Adjust padding */
-            margin: 0; /* Remove margin to tighten spacing */
+            padding: 0.2rem 1rem;
+            margin: 0;
         }
 
-        /* Synchronizing colors for light and dark modes */
         [data-bs-theme='light'] {
             --bs-light: #ffffff;
             --bs-dark: #212529;
             --bs-primary: #0d6efd;
-            --navbar-bg: #f8f9fa; /* Light mode navbar background */
-            --navbar-color: #212529; /* Light mode navbar text color */
-            --navbar-dropdown-bg: #ffffff; /* Light mode dropdown background */
-            --navbar-dropdown-color: #212529; /* Light mode dropdown text color */
+            --navbar-bg: #f8f9fa;
+            --navbar-color: #212529;
+            --navbar-dropdown-bg: #ffffff;
+            --navbar-dropdown-color: #212529;
         }
 
         [data-bs-theme='dark'] {
             --bs-light: #343a40;
             --bs-dark: #ffffff;
             --bs-primary: #1e7e34;
-            --navbar-bg: #212529; /* Dark mode navbar background */
-            --navbar-color: #ffffff; /* Dark mode navbar text color */
-            --navbar-dropdown-bg: #343a40; /* Dark mode dropdown background */
-            --navbar-dropdown-color: #ffffff; /* Dark mode dropdown text color */
+            --navbar-bg: #212529;
+            --navbar-color: #ffffff;
+            --navbar-dropdown-bg: #343a40;
+            --navbar-dropdown-color: #ffffff;
         }
 
-        /* Custom styles for sections */
         section {
             padding: 60px 0;
             text-align: center;
@@ -78,6 +76,11 @@
             width: 100%;
             height: auto;
         }
+
+        #meditationButton:hover {
+            transform: scale(1.05);
+            background-color: #343a40;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
@@ -85,13 +88,11 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <!-- Logo -->
             <a class="navbar-brand" href="#"><strong>Lifestyle Vibes</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -104,9 +105,9 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-primary" href="#subscribe">Subscribe</a>
+                        <!-- Tombol Subscribe untuk memicu modal -->
+                        <button class="nav-link btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#subscribeModal">Subscribe</button>
                     </li>
-                    <!-- Dropdown for theme mode -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i id="themeIcon" class="bi bi-brightness-high"></i>
@@ -134,7 +135,45 @@
         </div>
     </nav>
 
-<!-- Home Section -->
+   <!-- Modal Subscribe -->
+<div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="subscribeModalLabel">Subscribe For New Experience</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="subscribeForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phoneNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="subscribeForm" class="btn btn-primary">Subscribe</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Home Section -->
 <section id="home">
   <div class="container">
       <h2>Welcome to the Lifestyle Hub</h2>
@@ -171,7 +210,7 @@
       <!-- Fashion Tips Section -->
       <h3 class="mt-5">Explore Fashion & Trends</h3>
       <p>Stay ahead in fashion with insights into what's trending, suistainable fashion tips and more.</p>
-      <p>Try this fashion tips trends !</p>
+      <p>Try this trending fashion tips !</p>
       <div id="fashionTipsCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
               <div class="carousel-item active">
@@ -293,7 +332,7 @@
                   <img src="/prod3.jpg" class="card-img-top" alt="Productivity Tip 3" />
                   <div class="card-body">
                       <h5 class="card-title">Use Time Blocks</h5>
-                      <p class="card-text">Allocate specific time slots for tasks.</p>
+                      <p class="card-text">Allocate specific time slots for tasks for eficiency.</p>
                   </div>
               </div>
           </div>
@@ -302,34 +341,20 @@
 </section>
 
 <!-- Meditation Techniques Section -->
-<div class="container mt-5">
+<div class="container mt-5 text-center">
     <h4 class="mb-3">Interested in Meditation Techniques?</h4>
-    <p>To explore more about meditation techniques for beginners, follow the link below for detailed guidance and tips:</p>
-    <a href="https://positivepsychology.com/meditation-techniques-beginners/" target="_blank" class="btn btn-primary">Read Here!</a>
+    
+    <!-- Center the image and add shadow -->
+    <img class="meditation img-thumbnail shadow-sm mx-auto" src="/medt.jpg" alt="Meditation Image" style="max-width: 500px;">
+
+    <p class="mt-3">To explore more about meditation techniques for beginners, follow the link below for detailed guidance and tips:</p>
+    
+    <!-- Center the button and reduce its width -->
+    <button id="meditationButton" class="btn btn-primary btn-sm mx-auto" style="width: 200px; transition: transform 0.3s ease, background-color 0.3s ease;">
+        Read Here!
+    </button>
 </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions, feel free to reach out!</p>
-            <form>
-                <div class="mb-3">
-                    <label for="contactName" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="contactName" required />
-                </div>
-                <div class="mb-3">
-                    <label for="contactEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="contactEmail" required />
-                </div>
-                <div class="mb-3">
-                    <label for="contactMessage" class="form-label">Message</label>
-                    <textarea class="form-control" id="contactMessage" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-        </div>
-    </section>
 
     <!-- Subscription Section -->
     <section id="subscribe">
@@ -350,12 +375,12 @@
             <a href="#">Privacy Policy</a> •
             <a href="#">Terms & Conditions</a>
         </small>
-    </footer>
+    </footer> 
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@1/js/pico.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- External JavaScript File -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
