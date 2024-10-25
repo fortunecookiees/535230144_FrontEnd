@@ -81,59 +81,97 @@
             transform: scale(1.05);
             background-color: #343a40;
         }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--bs-light);
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-logo {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .footer-text {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        section#home {
+            margin-top: 100px; /* Sesuaikan dengan tinggi navbar */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-bs-theme='light'] .card:hover {
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-bs-theme='dark'] .card:hover {
+            box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.1);
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><strong>Lifestyle Vibes</strong></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- Tombol Subscribe untuk memicu modal -->
-                        <button class="nav-link btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#subscribeModal">Subscribe</button>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i id="themeIcon" class="bi bi-brightness-high"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="themeDropdown">
-                            <li>
-                                <a class="dropdown-item" href="#" onclick="setTheme('light')">
-                                    <i class="bi bi-brightness-high"></i> Light
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#" onclick="setTheme('dark')">
-                                    <i class="bi bi-moon"></i> Dark
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#" onclick="setTheme('auto')">
-                                    <i class="bi bi-circle-half"></i> Auto
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><strong>Lifestyle Vibes</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Tombol Subscribe untuk memicu modal -->
+                    <button class="nav-link btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#subscribeModal">Subscribe</button>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i id="themeIcon" class="bi bi-brightness-high"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="themeDropdown">
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="setTheme('light')">
+                                <i class="bi bi-brightness-high"></i> Light
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="setTheme('dark')">
+                                <i class="bi bi-moon"></i> Dark
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="setTheme('auto')">
+                                <i class="bi bi-circle-half"></i> Auto
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
    <!-- Modal Subscribe -->
 <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
@@ -343,13 +381,8 @@
 <!-- Meditation Techniques Section -->
 <div class="container mt-5 text-center">
     <h4 class="mb-3">Interested in Meditation Techniques?</h4>
-    
-    <!-- Center the image and add shadow -->
     <img class="meditation img-thumbnail shadow-sm mx-auto" src="/medt.jpg" alt="Meditation Image" style="max-width: 500px;">
-
-    <p class="mt-3">To explore more about meditation techniques for beginners, follow the link below for detailed guidance and tips:</p>
-    
-    <!-- Center the button and reduce its width -->
+    <p class="mt-3">Follow the link below for detailed guidance and tips for meditation techniques:</p>
     <button id="meditationButton" class="btn btn-primary btn-sm mx-auto" style="width: 200px; transition: transform 0.3s ease, background-color 0.3s ease;">
         Read Here!
     </button>
@@ -357,25 +390,42 @@
 
 
     <!-- Subscription Section -->
-    <section id="subscribe">
-        <div class="container">
-            <h2>Stay in the Loop</h2>
-            <h3>Subscribe to Our Newsletter</h3>
-            <form class="grid">
-                <input type="text" id="firstname" name="firstname" placeholder="First Name" aria-label="First Name" required />
-                <input type="email" id="email" name="email" placeholder="Email" aria-label="Email" required />
-                <button type="submit" onclick="event.preventDefault()">Subscribe</button>
-            </form>
+<section id="subscribe" class="my-5">
+    <div class="container">
+        <h2>Stay in the Loop</h2>
+        <h3>Subscribe to Our Newsletter</h3>
+        <div class="card text-center" style="background-color: #22303d; border-radius: 10px;">
+            <div class="card-body">
+                <p class="card-text">Join our community for exclusive updates and wellness tips!</p>
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First Name" aria-label="First Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email" aria-label="Email" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary w-100" onclick="event.preventDefault()">Subscribe</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="container">
-        <small>
+        <div class="d-flex justify-content-center align-items-center mb-2">
+            <div class="footer-logo d-flex align-items-center">
+                <span class="ms-2"> © Lifestyle Vibes 2024</span>
+            </div>
+        </div>
+        <small class="footer-text">
             <a href="#">Privacy Policy</a> •
             <a href="#">Terms & Conditions</a>
         </small>
-    </footer> 
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@1/js/pico.min.js"></script>
